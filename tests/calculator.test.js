@@ -33,6 +33,16 @@ describe('Calculator', () => {
         expect(() => Calculator.perkalian(firstString, secondString)).toThrow();
         expect(() => Calculator.pembagian(firstString, secondString)).toThrow();
     });
+
+    it ('Mengembalikan error ketika memasukkan nilai NaN', () => {
+        const firstNumber = NaN;
+        const secondNumber = NaN;
+
+        expect(() => Calculator.penjumlahan(firstNumber, secondNumber)).toThrowError(Error);
+        expect(() => Calculator.pengurangan(firstNumber, secondNumber)).toThrowError(Error);
+        expect(() => Calculator.perkalian(firstNumber, secondNumber)).toThrowError(Error);
+        expect(() => Calculator.pembagian(firstNumber, secondNumber)).toThrowError(Error);  
+    })
 });
 
 
